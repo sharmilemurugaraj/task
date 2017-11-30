@@ -29,7 +29,7 @@ export class UserDetailComponent {
 		})
 	}
   deleteList(todo:any) {
-    this.http.put('https://jsonplaceholder.typicode.com/todos/'+todo.id).subscribe((data:any) => {
+    this.http.put('https://jsonplaceholder.typicode.com/todos/'+todo.id,{}).subscribe((data:any) => {
       var i = this.todosList.indexOf(todo);
       if(i != -1) {
         this.todosList.splice(i, 1);
@@ -47,11 +47,11 @@ export class UserDetailComponent {
   }
 
   create() {
-    this.todo.completed = false;
-    this.todo.userId = 1;
+    this.todo['completed'] = false;
+    this.todo['userId'] = 1;
     let userId = Math.max.apply( Math, this.todosList);
-    this.todo.id = userId + 1;
-    this.todo.title = this.title;
+    this.todo['id'] = userId + 1;
+    this.todo['title'] = this.title;
     this.http.post('https://jsonplaceholder.typicode.com/todos',this.todo).subscribe((res:any) => {
       this.todosList.push(res);
     })

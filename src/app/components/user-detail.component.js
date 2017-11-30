@@ -39,7 +39,7 @@ var UserDetailComponent = (function () {
     };
     UserDetailComponent.prototype.deleteList = function (todo) {
         var _this = this;
-        this.http.put('https://jsonplaceholder.typicode.com/todos/' + todo.id).subscribe(function (data) {
+        this.http.put('https://jsonplaceholder.typicode.com/todos/' + todo.id, {}).subscribe(function (data) {
             var i = _this.todosList.indexOf(todo);
             if (i != -1) {
                 _this.todosList.splice(i, 1);
@@ -58,11 +58,11 @@ var UserDetailComponent = (function () {
     };
     UserDetailComponent.prototype.create = function () {
         var _this = this;
-        this.todo.completed = false;
-        this.todo.userId = 1;
+        this.todo['completed'] = false;
+        this.todo['userId'] = 1;
         var userId = Math.max.apply(Math, this.todosList);
-        this.todo.id = userId + 1;
-        this.todo.title = this.title;
+        this.todo['id'] = userId + 1;
+        this.todo['title'] = this.title;
         this.http.post('https://jsonplaceholder.typicode.com/todos', this.todo).subscribe(function (res) {
             _this.todosList.push(res);
         });
