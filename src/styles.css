@@ -1,0 +1,48 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+.card {
+   width: 50rem;
+   margin:2% 7%;
+}
+.btn-primary {
+	float:right;
+}
+.fixed-height {
+	height:calc(100vh - 700px);
+	overflow:auto;
+}
+.card-block span {
+  color: grey;
+  font-size: 14px;
+}
+.card-block p {
+  margin-right: 10px;
+}
+.card-block:hover, .user-container li:hover {
+  background: lightgray;
+  color: white;
+}
+
+.list-group-item p {
+  min-width: 500px;
+  float: left;
+}
+.user-container {
+  margin: 20px;
+  max-height: calc(100vh - 120px);
+  overflow: auto;
+}
+
+.input-create{
+  width: 456px !important;
+  float: left;
+  margin-right: 20px;
+  height: 40px !important;
+  margin-bottom: 20px;
+}
+.linethrough {
+  text-decoration: line-through;
+}

@@ -1,0 +1,16 @@
+<div class="user-container">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let todo of todosList">
+        <p  [ngClass]="{'linethrough': todo.completed}">{{todo.title}}</p>
+      <label class="switch">
+      <input type="checkbox" [(checked)]="todo.completed" (click)="updateList(todo)">
+      <span class="slider round"></span>
+        <span class="fa fa-trash-o cursor-pointer" (click)="deleteList(todo)"></span>
+    </label></li>
+    </ul>
+</div>
+<div class="user-container">
+    <input type="text" class="form-control input-create" [(ngModel)]="title">
+    <button type="button" class="btn btn-primary pull-left" (click)="create()">Create</button>
+</div>
+

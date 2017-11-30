@@ -1,0 +1,12 @@
+<div class="card" *ngFor="let user of usersList">
+  <div class="card-block">
+    <span>Name</span>
+    <p class="card-text">{{user.name}}</p>
+    <span>Email</span>
+	  <p class="card-text">{{user.email}}</p>
+    <span>Phone</span>
+    <p class="card-text">{{user.phone}}</p>
+    <span>Website</span>
+    <p class="card-text">{{user.website}}</p>
+    <button class="btn btn-primary" (click)="redirect(user)"> View Todos</button>  </div>
+</div>
